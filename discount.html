@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>discount</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #f3f3f3;
+      }
+      .w {
+        width: 1200px;
+        margin: auto;
+      }
+      li {
+        list-style: none;
+      }
+      .clear {
+        clear: both;
+      }
+      .fl {
+        float: left;
+      }
+      .fr {
+        float: right;
+      }
+      .bs {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+      .nav {
+        font-size: 18px;
+        color: #3c3d46;
+        line-height: 72px;
+      }
+      .logo img {
+        vertical-align: middle;
+      }
+      .list {
+        margin-left: 150px;
+      }
+      .list > li {
+        float: left;
+        width: 80px;
+        height: 72px;
+        text-align: center;
+        margin-right: 24px;
+      }
+      .active {
+        color: #fefeff !important;
+        background-color: #5696ff;
+      }
+      .list li:hover {
+        color: #fefeff !important;
+        background-color: #5696ff;
+      }
+      .login_register .line {
+        margin: 0 10px;
+        color: #999;
+      }
+      .bgc {
+        width: 1920px;
+        height: 66px;
+        margin: auto;
+        background-color: #666;
+      }
+      .seabtns {
+        margin-top: -66px;
+        width: 1200px;
+      }
+      .seabtns div :nth-child(-n + 4) {
+        height: 22px;
+        border-right: #fefefe 1px solid;
+        border-left: #fefefe 1px solid;
+        text-align: center;
+        margin: 20px 0;
+        padding: 0 39px;
+      }
+      .write,
+      .history {
+        margin-right: -1px;
+      }
+      .banner {
+        width: 1200px;
+        height: 350px;
+        margin: 55px auto;
+        color: #fff;
+        background: url(./css/discbanner.png);
+      }
+      .ticket {
+        background-color: #5696ff;
+        width: 270px;
+        height: 80px;
+        margin-top: 233px;
+      }
+      .ticket span:first-child {
+        margin-left: 20px;
+        font-size: 45px;
+        line-height: 80px;
+      }
+      .ticket span:last-child {
+        font-size: 17px;
+        margin: 20px 0 0 5px;
+      }
+      .deals {
+        width: 200px;
+        text-align: center;
+      }
+      .deals p:nth-child(1) {
+        font-size: 35px;
+        margin-top: 15px;
+      }
+      .deals p:nth-child(2) {
+        margin-bottom: 20px;
+      }
+      .deals div:nth-child(5) {
+        margin: 30px auto 10px auto;
+        width: 140px;
+        height: 33px;
+        background-color: #f3f3f3;
+        border-radius: 4px;
+      }
+      .deals .leave {
+        line-height: 33px;
+        font-size: 14px;
+        color: #333;
+        font-weight: 700;
+      }
+      .deals .start {
+        font-size: 12px;
+        color: #333;
+      }
+      .end {
+        margin: 10px auto;
+        width: 140px;
+        height: 33px;
+        background-color: #f3f3f3;
+        border-radius: 4px;
+        color: #999;
+        font-size: 14px;
+        line-height: 33px;
+        overflow: hidden;
+      }
+      .icon {
+        width: 40px;
+        height: 33px;
+        background-color: #5696ff;
+      }
+      .icon img {
+        width: 20px;
+        margin-top: 5px;
+      }
+      .detail {
+        margin-top: 50px;
+      }
+      .sale {
+        width: 860px;
+      }
+      .sell {
+        margin-left: 15px;
+      }
+      .sell > p {
+        margin-bottom: 10px;
+      }
+      .sell p:nth-child(1) {
+        color: #5696ff;
+        text-decoration: underline;
+        font-size: 14px;
+      }
+      .sell p:nth-child(2) {
+        width: 509px;
+        font-size: 22px;
+        color: #333;
+      }
+      .sell p:nth-child(3) {
+        color: #666;
+      }
+      .sell p:nth-child(4) {
+        color: #eb4c4d;
+        font-size: 36px;
+      }
+      .sell p:nth-child(5) {
+        margin: -42px 0 0 120px;
+        font-size: 20px;
+        color: #eb4c4d;
+      }
+      .buy {
+        width: 140px;
+        height: 50px;
+        color: #5696ff;
+        font-size: 22px;
+        text-align: center;
+        line-height: 50px;
+        border: 2px #5696ff solid;
+        margin-top: -50px;
+      }
+      .sale .line {
+        width: 800px;
+        height: 1px;
+        background-color: #e9e9e9;
+        margin: 50px 0;
+      }
+      .page {
+        margin: 80px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .page span {
+        display: inline-block;
+        width: 50px;
+        text-align: center;
+        line-height: 60px;
+      }
+      .page .currented {
+        color: #5696ff;
+      }
+      .page span:first-child,
+      .page span:last-child {
+        width: 200px;
+        height: 60px;
+        border: 1px solid #e9e9e9;
+      }
+      .thisweek {
+        width: 280px;
+      }
+      .hotsell {
+        width: 280px;
+        height: 50px;
+        border: 1px solid #5696ff;
+        line-height: 50px;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .hotsale {
+        margin: 20px auto;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e9e9e9;
+      }
+      .hotsale p:nth-child(2) {
+        width: 168px;
+        font-size: 13px;
+        color: #333;
+      }
+      .hotsale p:nth-child(3) {
+        font-size: 14px;
+        color: #eb4c4d;
+        margin: 20px 110px 0 0;
+      }
+      .footer {
+        width: 1920px;
+        margin: auto;
+        background-color: #5696ff;
+        color: #fafafc;
+        font-size: 16px;
+        line-height: 35px;
+      }
+      .footright {
+        width: 660px;
+        margin: auto;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!--头部导航条-->
+      <div class="nav w">
+        <div class="logo fl">
+          <img src="./css/logo.png" alt="" />
+          <img src="./css/brand.png" alt="" />
+        </div>
+        <ul class="list fl">
+          <li>首页</li>
+          <li>地区</li>
+          <li class="active">特惠</li>
+          <li>咨询</li>
+          <li>游记</li>
+          <div class="clear"></div>
+        </ul>
+        <div class="login_register fr">
+          <span>登录</span><span class="line">|</span><span>注册</span>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--搜索部分-->
+      <div class="bgc"></div>
+      <div class="seabtns w">
+        <div class="fl">
+          <img src="./css/searchicon.png" alt="" />
+        </div>
+        <div class="fr"><img src="./css/user.png" alt="" /></div>
+        <div class="write fr"><img src="./css/write.png" alt="" /></div>
+        <div class="history fr">
+          <img src="./css/history.png" alt="" />
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--banner-->
+      <div class="banner w">
+        <div class="ticket fl">
+          <span class="fl">特 惠 票</span>
+          <span class="fl">TICKET<br />DEALS</span>
+        </div>
+        <div class="deals fr">
+          <p>特惠票</p>
+          <p>TICKET DEALS</p>
+          <img src="./css/barcode.png" alt="" />
+          <img src="./css/barcode.png" alt="" />
+          <div>
+            <span class="leave">广州 </span><span class="start"> 出发</span>
+          </div>
+          <img src="./css/right.png" alt="" />
+          <div class="end">
+            <span>请输入目的地</span
+            ><span class="icon fr"
+              ><img src="./css/searchicon.png" alt=""
+            /></span>
+          </div>
+        </div>
+      </div>
+      <!--售卖部分-->
+      <div class="detail w">
+        <div class="sale fl">
+          <div class="order">
+            <img class="fl" src="./css/sale.png" alt="" />
+            <div class="sell fl">
+              <p>已售150</p>
+              <p>
+                【泼水节预售】广州直飞泰国曼谷+芭提雅+沙美岛6天5晚跟团游（全程无自费+全程5星酒店+沙美岛出海+国际人妖秀+送意外险）
+              </p>
+              <p>班期：清明五一03/30-06/30</p>
+              <p>￥2099</p>
+              <p>起</p>
+              <div class="buy fr">立即预定</div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="line"></div>
+          <div class="order">
+            <img class="fl" src="./css/sale.png" alt="" />
+            <div class="sell fl">
+              <p>已售150</p>
+              <p>
+                【泼水节预售】广州直飞泰国曼谷+芭提雅+沙美岛6天5晚跟团游（全程无自费+全程5星酒店+沙美岛出海+国际人妖秀+送意外险）
+              </p>
+              <p>班期：清明五一03/30-06/30</p>
+              <p>￥2099</p>
+              <p>起</p>
+              <div class="buy fr">立即预定</div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="line"></div>
+          <div class="order">
+            <img class="fl" src="./css/sale.png" alt="" />
+            <div class="sell fl">
+              <p>已售150</p>
+              <p>
+                【泼水节预售】广州直飞泰国曼谷+芭提雅+沙美岛6天5晚跟团游（全程无自费+全程5星酒店+沙美岛出海+国际人妖秀+送意外险）
+              </p>
+              <p>班期：清明五一03/30-06/30</p>
+              <p>￥2099</p>
+              <p>起</p>
+              <div class="buy fr">立即预定</div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="line"></div>
+          <div class="order">
+            <img class="fl" src="./css/sale.png" alt="" />
+            <div class="sell fl">
+              <p>已售150</p>
+              <p>
+                【泼水节预售】广州直飞泰国曼谷+芭提雅+沙美岛6天5晚跟团游（全程无自费+全程5星酒店+沙美岛出海+国际人妖秀+送意外险）
+              </p>
+              <p>班期：清明五一03/30-06/30</p>
+              <p>￥2099</p>
+              <p>起</p>
+              <div class="buy fr">立即预定</div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="line"></div>
+          <div class="page">
+            <span><上一页</span><span>1</span><span class="currented">2</span
+            ><span>3</span><span>4</span><span>5</span><span>6</span
+            ><span>...</span><span>17</span><span>下一页></span>
+          </div>
+        </div>
+        <div class="thisweek fr">
+          <div class="hotsell">本周热卖</div>
+          <div class="hotsale">
+            <img class="fl" src="./css/hotsalepic.png" alt="" />
+            <p class="fr">上海直飞普吉岛5-6天自由行（3套航班任意选择+可选...</p>
+            <p class="fr">￥1899起</p>
+            <div class="clear"></div>
+          </div>
+          <div class="hotsale">
+            <img class="fl" src="./css/hotsalepic.png" alt="" />
+            <p class="fr">上海直飞普吉岛5-6天自由行（3套航班任意选择+可选...</p>
+            <p class="fr">￥1899起</p>
+            <div class="clear"></div>
+          </div>
+          <div class="hotsale">
+            <img class="fl" src="./css/hotsalepic.png" alt="" />
+            <p class="fr">上海直飞普吉岛5-6天自由行（3套航班任意选择+可选...</p>
+            <p class="fr">￥1899起</p>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--底部-->
+      <div class="footer">
+        <p class="footright">
+          © 2017 Leyouyou.cn 粤ICP备12345678号 粤公网安备123456789012号
+          粤ICP证123456号<br />
+          营业执照 新出网证(粤)字123号 全国统一客服电话：0000-123-456
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

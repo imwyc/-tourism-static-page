@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>travel</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #f3f3f3;
+      }
+      .w {
+        width: 1200px;
+        margin: auto;
+      }
+      li {
+        list-style: none;
+      }
+      .clear {
+        clear: both;
+      }
+      .fl {
+        float: left;
+      }
+      .fr {
+        float: right;
+      }
+      .bs {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+      .nav {
+        font-size: 18px;
+        color: #3c3d46;
+        line-height: 72px;
+      }
+      .logo img {
+        vertical-align: middle;
+      }
+      .list {
+        margin-left: 150px;
+      }
+      .list > li {
+        float: left;
+        width: 80px;
+        height: 72px;
+        text-align: center;
+        margin-right: 24px;
+      }
+      .active {
+        color: #fefeff !important;
+        background-color: #5696ff;
+      }
+      .list li:hover {
+        color: #fefeff !important;
+        background-color: #5696ff;
+      }
+      .login_register .line {
+        margin: 0 10px;
+        color: #999;
+      }
+      .bgc {
+        width: 1920px;
+        height: 66px;
+        margin: auto;
+        background-color: #666;
+      }
+      .seabtns {
+        margin-top: -66px;
+        width: 1200px;
+      }
+      .seabtns div :nth-child(-n + 4) {
+        height: 22px;
+        border-right: #fefefe 1px solid;
+        border-left: #fefefe 1px solid;
+        text-align: center;
+        margin: 20px 0;
+        padding: 0 39px;
+      }
+      .write,
+      .history {
+        margin-right: -1px;
+      }
+      .content {
+        margin-top: 56px;
+      }
+      .photos {
+        width: 355px;
+      }
+      .travelnav {
+        width: 355px;
+        border-bottom: #dcdcdc 1px solid;
+        padding-bottom: 12px;
+      }
+      .seleart,
+      .selepho {
+        position: relative;
+        margin: 0 auto 43px;
+        border: #dcdcdc 1px solid;
+        text-align: center;
+        font-size: 26px;
+        color: #5696ff;
+        width: 207px;
+        height: 60px;
+        line-height: 60px;
+      }
+      .seleart::before,
+      .seleart::after {
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        content: "";
+        height: 12px;
+        width: 12px;
+        border-right: #5696ff 2px solid;
+        border-bottom: #5696ff 2px solid;
+        transform: rotate(-45deg);
+      }
+      .seleart::after {
+        right: 28px;
+      }
+      .selepho::before,
+      .selepho::after {
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        content: "";
+        height: 12px;
+        width: 12px;
+        border-right: #5696ff 2px solid;
+        border-bottom: #5696ff 2px solid;
+        transform: rotate(45deg);
+      }
+      .selepho::after {
+        top: 17px;
+      }
+      .photos > div:nth-child(2) {
+        margin-top: 55px;
+      }
+      .photo {
+        width: 354px;
+        background-color: #fff;
+        border: #dcdcdc 1px solid;
+        margin-bottom: 52px;
+        box-sizing: border-box;
+      }
+      .photo img {
+        margin: -1px auto 20px -1px;
+      }
+      .photo p:nth-child(2) {
+        font-size: 20px;
+        color: #333;
+        margin-left: 22px;
+      }
+      .photo p:nth-child(3) {
+        font-size: 12px;
+        color: #666;
+        margin: 6px 0 20px 22px;
+      }
+      .photo img:nth-child(4) {
+        margin: -70px 30px 0 0;
+      }
+      .smallphoto {
+        padding: 38px 0;
+        border-top: solid 1px #dcdcdc;
+      }
+      .smallphoto p:nth-child(2) {
+        font-size: 20px;
+        color: #333;
+        margin: 20px 0 5px 110px;
+      }
+      .smallphoto p:nth-child(3) {
+        font-size: 12px;
+        color: #666;
+        margin-left: 110px;
+      }
+      .about {
+        border-top: solid 1px #dcdcdc;
+        padding-top: 44px;
+      }
+      .about p:first-child {
+        font-size: 22px;
+        color: #333;
+      }
+      .about p:nth-child(2) {
+        color: #666;
+        margin: 20px 0;
+        line-height: 26px;
+      }
+      .moreinfo {
+        width: 120px;
+        height: 50px;
+        border: solid 1px #dcdcdc;
+        text-align: center;
+        line-height: 50px;
+        margin-top: 30px;
+      }
+      .articles {
+        width: 772px;
+      }
+      .article {
+        background-color: #fff;
+        width: 772px;
+        height: 729px;
+        border: solid 1px #dcdcdc;
+        margin-bottom: 76px;
+      }
+      .toptitle {
+        border-bottom: solid 1px #dcdcdc;
+      }
+      .title {
+        border-right: solid 1px #dcdcdc;
+        padding: 25px 38px;
+        width: 590px;
+        height: 110px;
+        box-sizing: border-box;
+      }
+      .title p:first-child {
+        font-size: 22px;
+        color: #333;
+      }
+      .title p:last-child {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #999;
+      }
+      .writeinfo {
+        padding: 30px 30px 0 0;
+        text-align: right;
+      }
+      .writeinfo img {
+        margin: -40px 0 0 0;
+      }
+      .writeinfo p:nth-child(1) {
+        font-size: 12px;
+        color: #333;
+      }
+      .writeinfo p:nth-child(2) {
+        font-size: 12px;
+        color: #666;
+        margin: 20px 60px 0 0;
+      }
+      .detail {
+        padding: 60px 40px;
+      }
+      .detail p {
+        color: #666;
+        margin: 20px auto;
+        line-height: 28px;
+      }
+      .choise span:nth-of-type(1) {
+        float: left;
+        font-size: 14px;
+        color: #333;
+        width: 110px;
+        height: 50px;
+        border: solid 1px #dcdcdc;
+        line-height: 50px;
+        text-align: center;
+      }
+      .choise span:nth-of-type(n + 2) {
+        float: right;
+        color: #999;
+        font-size: 18px;
+        padding-right: 20px;
+        vertical-align: middle;
+        margin-top: 15px;
+      }
+      .choise span img {
+        vertical-align: middle;
+        margin: 0 20px;
+      }
+      .choise span:nth-of-type(3) {
+        border-right: solid 1px #dcdcdc;
+        border-left: solid 1px #dcdcdc;
+      }
+      .page {
+        margin: 70px auto;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+      .page span {
+        display: inline-block;
+        width: 50px;
+        text-align: center;
+        line-height: 60px;
+      }
+      .page .currented {
+        color: #5696ff;
+      }
+      .page span:first-child,
+      .page span:last-child {
+        width: 200px;
+        height: 60px;
+        border: 1px solid #dcdcdc;
+      }
+      .footer {
+        width: 1920px;
+        margin: auto;
+        background-color: #5696ff;
+        color: #fafafc;
+        font-size: 16px;
+        line-height: 35px;
+      }
+      .footright {
+        width: 660px;
+        margin: auto;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!--头部导航条-->
+      <div class="nav w">
+        <div class="logo fl">
+          <img src="./css/logo.png" alt="" />
+          <img src="./css/brand.png" alt="" />
+        </div>
+        <ul class="list fl">
+          <li>首页</li>
+          <li>地区</li>
+          <li>特惠</li>
+          <li>咨询</li>
+          <li class="active">游记</li>
+          <div class="clear"></div>
+        </ul>
+        <div class="login_register fr">
+          <span>登录</span><span class="line">|</span><span>注册</span>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--搜索部分-->
+      <div class="bgc"></div>
+      <div class="seabtns w">
+        <div class="fl">
+          <img src="./css/searchicon.png" alt="" />
+        </div>
+        <div class="fr"><img src="./css/user.png" alt="" /></div>
+        <div class="write fr"><img src="./css/write.png" alt="" /></div>
+        <div class="history fr">
+          <img src="./css/history.png" alt="" />
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--内容部分-->
+      <div class="content w">
+        <div class="photos fl">
+          <div class="travelnav">
+            <div class="seleart">精选文章</div>
+            <div class="selepho">精选照片</div>
+          </div>
+          <div class="photo">
+            <img src="./css/bright.png" alt="" />
+            <p>小桥流水</p>
+            <p>2017年03月06日</p>
+            <img class="fr" src="./css/usericon.png" alt="" />
+            <div class="clear"></div>
+          </div>
+          <div class="photo">
+            <img src="./css/bright.png" alt="" />
+            <p>小桥流水</p>
+            <p>2017年03月06日</p>
+            <img class="fr" src="./css/usericon.png" alt="" />
+            <div class="clear"></div>
+          </div>
+          <div class="photo">
+            <img src="./css/bright.png" alt="" />
+            <p>小桥流水</p>
+            <p>2017年03月06日</p>
+            <img class="fr" src="./css/usericon.png" alt="" />
+            <div class="clear"></div>
+          </div>
+          <div class="smallphoto">
+            <img class="fl" src="./css/sunset.png" alt="" />
+            <p>夕阳西下</p>
+            <p>2017年11月01日</p>
+            <div class="clear"></div>
+          </div>
+          <div class="smallphoto">
+            <img class="fl" src="./css/sunset.png" alt="" />
+            <p>夕阳西下</p>
+            <p>2017年11月01日</p>
+            <div class="clear"></div>
+          </div>
+          <div class="smallphoto">
+            <img class="fl" src="./css/sunset.png" alt="" />
+            <p>夕阳西下</p>
+            <p>2017年11月01日</p>
+            <div class="clear"></div>
+          </div>
+          <div class="smallphoto">
+            <img class="fl" src="./css/sunset.png" alt="" />
+            <p>夕阳西下</p>
+            <p>2017年11月01日</p>
+            <div class="clear"></div>
+          </div>
+          <div class="smallphoto">
+            <img class="fl" src="./css/sunset.png" alt="" />
+            <p>夕阳西下</p>
+            <p>2017年11月01日</p>
+            <div class="clear"></div>
+          </div>
+          <div class="about">
+            <p>关于我们</p>
+            <p>
+              悠游旅游是全球领先的旅游网站**，帮助旅行者发
+              现每次旅行中的更多精彩。提供超过5.7亿条点评和
+              建议，全面覆盖全球的旅游商户——超过730万个
+              住宿、航空公司、景点和餐厅信息，汇集众智帮助
+              旅行者选择吃住玩乐。悠游旅游还搜索超过200家
+              网站，帮助旅行者找到当日优惠的酒店价格并预订，
+              悠游旅游：懂得更多，订得更好，玩得更棒。
+            </p>
+            <div class="moreinfo">了解更多</div>
+          </div>
+        </div>
+        <div class="articles fr">
+          <div class="article">
+            <div class="toptitle">
+              <div class="title fl">
+                <p>将德国的美好时光与幸福心态定格</p>
+                <p>Determine the good time and happiness of Germany</p>
+              </div>
+              <div class="writeinfo fr">
+                <p>2017年12月23日</p>
+                <p>Ben</p>
+                <img src="./css/users.png" alt="" />
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="detail">
+              <img src="./css/germanart.png" alt="" />
+              <p 16 666>
+                喜欢洪莉，先喜欢她的语言表达，后来喜欢她的拍照功力，出了书以后又喜欢上她的文字。“浑身
+                金毛、通体雪白。”谈起老公日耳曼民族的起源，洪莉用这八个字形容他们从山林中向这个世界走
+                来的景象。我被她诗一般的语言迷住。我喜欢文字，洪莉偏偏是一个语言能力极强的人，她总是用
+                特别浅白的语言，说出抑扬顿挫的诗意。
+              </p>
+              <div class="choise">
+                <span>继续阅读</span>
+                <span><img src="./css/message.png" alt="" />120</span>
+                <span><img src="./css/like.png" alt="" />256</span>
+                <span><img src="./css/sub.png" alt="" />187</span>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <div class="toptitle">
+              <div class="title fl">
+                <p>将德国的美好时光与幸福心态定格</p>
+                <p>Determine the good time and happiness of Germany</p>
+              </div>
+              <div class="writeinfo fr">
+                <p>2017年12月23日</p>
+                <p>Ben</p>
+                <img src="./css/users.png" alt="" />
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="detail">
+              <img src="./css/germanart.png" alt="" />
+              <p 16 666>
+                喜欢洪莉，先喜欢她的语言表达，后来喜欢她的拍照功力，出了书以后又喜欢上她的文字。“浑身
+                金毛、通体雪白。”谈起老公日耳曼民族的起源，洪莉用这八个字形容他们从山林中向这个世界走
+                来的景象。我被她诗一般的语言迷住。我喜欢文字，洪莉偏偏是一个语言能力极强的人，她总是用
+                特别浅白的语言，说出抑扬顿挫的诗意。
+              </p>
+              <div class="choise">
+                <span>继续阅读</span>
+                <span><img src="./css/message.png" alt="" />120</span>
+                <span><img src="./css/like.png" alt="" />256</span>
+                <span><img src="./css/sub.png" alt="" />187</span>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+          <div class="article">
+            <div class="toptitle">
+              <div class="title fl">
+                <p>将德国的美好时光与幸福心态定格</p>
+                <p>Determine the good time and happiness of Germany</p>
+              </div>
+              <div class="writeinfo fr">
+                <p>2017年12月23日</p>
+                <p>Ben</p>
+                <img src="./css/users.png" alt="" />
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="detail">
+              <img src="./css/germanart.png" alt="" />
+              <p 16 666>
+                喜欢洪莉，先喜欢她的语言表达，后来喜欢她的拍照功力，出了书以后又喜欢上她的文字。“浑身
+                金毛、通体雪白。”谈起老公日耳曼民族的起源，洪莉用这八个字形容他们从山林中向这个世界走
+                来的景象。我被她诗一般的语言迷住。我喜欢文字，洪莉偏偏是一个语言能力极强的人，她总是用
+                特别浅白的语言，说出抑扬顿挫的诗意。
+              </p>
+              <div class="choise">
+                <span>继续阅读</span>
+                <span><img src="./css/message.png" alt="" />120</span>
+                <span><img src="./css/like.png" alt="" />256</span>
+                <span><img src="./css/sub.png" alt="" />187</span>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+          <div class="page">
+            <span><上一页</span><span>1</span><span class="currented">2</span
+            ><span>3</span><span>4</span><span>5</span><span>6</span
+            ><span>...</span><span>17</span><span>下一页></span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--底部-->
+      <div class="footer">
+        <p class="footright">
+          © 2017 Leyouyou.cn 粤ICP备12345678号 粤公网安备123456789012号
+          粤ICP证123456号<br />
+          营业执照 新出网证(粤)字123号 全国统一客服电话：0000-123-456
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

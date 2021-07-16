@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #f3f3f3;
+      }
+      .w {
+        width: 1200px;
+        margin: auto;
+      }
+      li {
+        list-style: none;
+      }
+      .clear {
+        clear: both;
+      }
+      .fl {
+        float: left;
+      }
+      .fr {
+        float: right;
+      }
+      .nav {
+        font-size: 18px;
+        color: #3c3d46;
+        line-height: 72px;
+      }
+      .logo img {
+        vertical-align: middle;
+      }
+      .list {
+        margin-left: 150px;
+      }
+      .list > li {
+        float: left;
+        width: 80px;
+        height: 72px;
+        text-align: center;
+        margin-right: 24px;
+      }
+      .active {
+        color: #fefeff !important;
+        background-color: #5696ff;
+      }
+      .list li:hover {
+        color: #fefeff !important;
+        background-color: #5696ff;
+      }
+      .login_register .line {
+        margin: 0 10px;
+        color: #999;
+      }
+      .banner {
+        width: 1920px;
+        height: 50px;
+        background: url(./css/background.png) no-repeat center;
+        margin: auto;
+        padding-top: 550px;
+      }
+      .turn {
+        width: 53px;
+        margin: auto;
+      }
+      .circle {
+        width: 16px;
+        height: 16px;
+        background-color: none;
+        border: #fcfcfd 2px solid;
+        border-radius: 50%;
+        box-sizing: border-box;
+      }
+      .current {
+        background-color: #fcfcfd;
+      }
+
+      .search {
+        position: relative;
+        width: 350px;
+        margin: auto;
+        margin-top: 70px;
+      }
+      .search input {
+        font-size: 16px;
+        color: #999;
+        width: 350px;
+        height: 40px;
+        border-radius: 5px;
+        border: #666 1px solid;
+        outline: none;
+        padding: 0 40px 0 10px;
+        box-sizing: border-box;
+      }
+      .search img {
+        position: absolute;
+        right: 13px;
+        top: 6px;
+        height: 25px;
+      }
+      .title {
+        width: 328px;
+        margin: auto;
+        margin-top: 60px;
+        color: #5696ff;
+      }
+      .title .line {
+        margin-top: 20px;
+        width: 78px;
+        height: 6px;
+        background: #666;
+      }
+      .title h4 {
+        font-size: 36px;
+        font-weight: 500;
+        margin-left: 14px;
+      }
+      .title p {
+        padding-top: 68px;
+        text-align: center;
+        color: #666;
+        font-size: 22px;
+      }
+      .swiper {
+        margin: 55px auto;
+      }
+      .swiper li {
+        float: left;
+        width: 118px;
+        height: 373px;
+        margin-right: 2px;
+      }
+      .sichuan {
+        background: url(./css/Sichuan.png) no-repeat;
+      }
+      .dali {
+        background: url(./css/Dali.png) no-repeat;
+      }
+      .denmark {
+        width: 596px !important;
+        background: url(./css/Denmark.png) no-repeat;
+      }
+      .japan {
+        background: url(./css/Japan.png) no-repeat;
+      }
+      .italy {
+        background: url(./css/Italy.png) no-repeat;
+      }
+      .france {
+        background: url(./css/Franch.png) no-repeat;
+      }
+      .covershadow {
+        width: 118px;
+        height: 373px;
+        background: rgba(51, 51, 51, 0.5);
+      }
+      .covershadow p {
+        writing-mode: vertical-lr;
+        padding-left: 30px;
+        padding-top: 70px;
+        font-size: 28px;
+        color: #fff;
+      }
+      .denmark .covershadow {
+        width: 596px;
+      }
+      .playbtn {
+        width: 60px;
+        margin: 30px auto;
+      }
+      .more {
+        width: 160px;
+        height: 50px;
+        border: solid 2px #5696ff;
+        border-radius: 5px;
+        margin: 72px auto 108px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 22px;
+        color: #5696ff;
+      }
+      .swiper span {
+        display: inline-block;
+        margin-right: 8px;
+        vertical-align: top;
+      }
+      .swiper p {
+        padding: 50px 0 0 56px;
+        font-size: 22px;
+        line-height: 22px;
+        color: #fff;
+      }
+      .denmark_tour {
+        width: 441px;
+        height: 307px;
+        background: url(./css/denmarktour.png);
+      }
+      .vietnam_tour {
+        position: relative;
+        width: 442px;
+        height: 307px;
+        background: url(./css/vietnamtour.png);
+      }
+      .cover_shadow {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 400px;
+        height: 266px;
+        border: 4px solid rgba(255, 255, 255, 0.8);
+        box-sizing: border-box;
+        margin: 21px;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .cover_shadow p {
+        padding: 23px 0 0 36px;
+      }
+      .price {
+        margin: auto;
+        padding: 45px 42px 0;
+      }
+      .cover_shadow .line {
+        width: 90px;
+        height: 4px;
+        background-color: #fff;
+      }
+      .const {
+        margin: -13px 20px 0;
+        color: #fff;
+        font-size: 26px;
+        line-height: 26px;
+      }
+
+      .japan_tour {
+        width: 300px;
+        height: 472px;
+        background: url(./css/japantour.png);
+      }
+      .thailand_tour {
+        width: 362px;
+        height: 369px;
+        background: url(./css/thailandtour.png);
+      }
+      .malaysia_tour {
+        width: 521px;
+        height: 369px;
+        background: url(./css/malaysiatour.png);
+      }
+      .india_tour {
+        width: 300px;
+        height: 204px;
+        background: url(./css/indiatour.png);
+      }
+      .leftT,
+      .japan_tour {
+        margin-bottom: 8px;
+      }
+      .bgc {
+        background-color: #5696ff;
+        color: #fefefe;
+      }
+      .news_m,
+      .news_n {
+        color: #333;
+        margin: 95px auto 0;
+      }
+      .news_m,
+      .news_n img {
+        vertical-align: top;
+      }
+      .bigpic {
+        height: 745px;
+        margin-top: 227px;
+        background: url(./css/bigpic.png) no-repeat center;
+      }
+      .bigpic img {
+        float: right;
+        margin-top: -175px;
+        border: 42px solid #f3f3f3;
+      }
+      .ruleF {
+        margin-left: 116px;
+        margin-top: 50px;
+      }
+      .ruleF .line {
+        width: 132px;
+        height: 8px;
+        background-color: #666;
+      }
+      .ruleF p {
+        text-align: right;
+        font-size: 30px;
+
+        margin-top: 28px;
+        line-height: 40px;
+      }
+      .articleF {
+        width: 560px;
+        font-size: 24px;
+        line-height: 48px;
+        margin: 50px 0 0 190px;
+      }
+      .articleF p {
+        text-indent: 2em;
+      }
+      .articleF :first-child {
+        text-indent: 0em;
+      }
+      .total {
+        width: 180px;
+        height: 60px;
+        font-size: 26px;
+        line-height: 60px;
+        text-align: center;
+        border: #999 solid 3px;
+        border-radius: 5px;
+        margin-top: 49px;
+      }
+      .pic1 {
+        width: 578px;
+        height: 781px;
+        background: url(./css/pic1.png) no-repeat;
+      }
+      .pic1 img {
+        float: left;
+        margin: 60px 0 0 485px;
+        border: 42px solid #f3f3f3;
+      }
+      .noindent {
+        text-indent: 0 !important;
+      }
+      .article {
+        margin-top: 50px;
+      }
+      .article_l {
+        vertical-align: top;
+        width: 730px;
+        height: 960px;
+        background-size: 730px;
+        background: url(./css/artbg.png) no-repeat;
+      }
+      .bs {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+      .bgshadow {
+        width: 501px;
+        height: 960px;
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .bgshadow h3 {
+        padding: 65px 0 0 35px;
+        color: #5696ff;
+        font-size: 24px;
+        font-weight: normal;
+      }
+      .bgshadow p {
+        color: #fefefe;
+      }
+      .dali_til {
+        margin-top: 75px;
+        font-size: 24px;
+      }
+      .location {
+        font-size: 20px;
+        margin: 10px 0 0 35px;
+      }
+      .time {
+        margin: 10px 0 0 320px;
+      }
+      .content {
+        margin: 20px 0 0 35px;
+        width: 415px;
+        text-indent: 3em;
+        line-height: 40px;
+      }
+      .bgtotal {
+        font-size: 22px;
+        color: #fff;
+        width: 160px;
+        height: 60px;
+        font-size: 26px;
+        line-height: 60px;
+        text-align: center;
+        border: rgba(255, 255, 255, 0.5) solid 2px;
+        border-radius: 5px;
+        margin: 150px 0 0 35px;
+      }
+
+      .art {
+        padding: 34px;
+        background-color: #fff;
+      }
+      .art > div {
+        width: 375px;
+        height: 297px;
+        background: url(./css/artpic1.png);
+      }
+      .inner {
+        margin: 10px 0 0 8px;
+        padding: 0 3px;
+        color: #fff;
+        font-size: 12px;
+        background-color: #9fbede;
+      }
+      .art p {
+        margin-top: 6px;
+      }
+      .art p:nth-child(2) {
+        font-size: 12px;
+        color: #333;
+      }
+      .art p:nth-child(3) {
+        font-size: 14px;
+        color: #333;
+      }
+      .art p:nth-child(4) {
+        width: 375px;
+        font-size: 12px;
+        color: #666;
+      }
+      .art > span {
+        margin: -16px 0 0 300px;
+        font-size: 12px;
+        color: #5696ff;
+      }
+      .behind {
+        margin-top: 26px;
+      }
+      .behind > div {
+        width: 375px;
+        height: 297px;
+        background: url(./css/artkawa.png);
+      }
+      .behind > span {
+        margin-left: 275px;
+      }
+      .pics {
+        float: left;
+        width: 276px;
+        margin-left: 20px;
+        margin-bottom: 29px;
+        font-size: 12px;
+        color: #666;
+      }
+      .pics :nth-child(2) {
+        display: inline-block;
+        margin-right: 30px;
+        margin-top: 10px;
+      }
+      .pics :nth-child(4) {
+        margin-top: 6px;
+        font-size: 16px;
+      }
+      .selectpic {
+        margin: 55px auto 100px;
+        background-color: #fff;
+      }
+      .selectpic > h6 {
+        padding: 29px 18px;
+        font-size: 24px;
+        color: #5696ff;
+        font-weight: normal;
+      }
+      .change {
+        width: 1165px;
+        margin: -280px 0 0 20px;
+      }
+      .change > div {
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        vertical-align: center;
+      }
+      .turns {
+        margin: 15px auto;
+        width: 15px;
+        height: 15px;
+        border-right: 4px solid #5696ff;
+        border-bottom: 4px solid #5696ff;
+        transform: rotate(-45deg);
+      }
+      .turnleft {
+        transform: rotate(135deg);
+      }
+      .footer {
+        width: 1920px;
+        margin: auto;
+        background-color: #5696ff;
+        color: #fafafc;
+        font-size: 16px;
+        line-height: 35px;
+      }
+      .footright {
+        width: 660px;
+        margin: auto;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!--头部导航条-->
+      <div class="nav w">
+        <div class="logo fl">
+          <img src="./css/logo.png" alt="" />
+          <img src="./css/brand.png" alt="" />
+        </div>
+        <ul class="list fl">
+          <li class="active">首页</li>
+          <li>地区</li>
+          <li>特惠</li>
+          <li>咨询</li>
+          <li>游记</li>
+          <div class="clear"></div>
+        </ul>
+        <div class="login_register fr">
+          <span>登录</span><span class="line">|</span><span>注册</span>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--banner板块-->
+      <div class="banner">
+        <div class="turn">
+          <div class="circle current fl"></div>
+          <div class="circle fr"></div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <!--搜索框-->
+      <div class="search">
+        <input type="text" placeholder="开启你的旅程吧！" />
+        <img src="./css/search.png" alt="" />
+      </div>
+      <!--地区旅游标题-->
+      <div class="title">
+        <div class="line fl"></div>
+        <h4 class="fl">地区旅游</h4>
+        <div class="line fr"></div>
+        <p>从这里开始有意思的旅程</p>
+      </div>
+      <!--地区图片列表-->
+      <ul class="swiper w">
+        <li class="sichuan">
+          <div class="covershadow">
+            <p>四川</p>
+          </div>
+        </li>
+        <li class="dali">
+          <div class="covershadow">
+            <p>大理</p>
+          </div>
+        </li>
+        <li class="denmark">
+          <div class="covershadow">
+            <p>丹麦</p>
+            <div class="playbtn"><img src="./css/playbtn.png" alt="" /></div>
+          </div>
+        </li>
+        <li class="japan">
+          <div class="covershadow">
+            <p>日本</p>
+          </div>
+        </li>
+        <li class="italy">
+          <div class="covershadow">
+            <p>意大利</p>
+          </div>
+        </li>
+        <li class="france">
+          <div class="covershadow">
+            <p>法国</p>
+          </div>
+        </li>
+        <div class="clear"></div>
+      </ul>
+      <div class="more">More></div>
+      <!--特惠行程标题-->
+      <div class="title">
+        <div class="line fl"></div>
+        <h4 class="fl">特惠行程</h4>
+        <div class="line fr"></div>
+        <p>给你带来最省钱的旅游</p>
+      </div>
+      <!--行程图片列表-->
+      <div class="swiper w">
+        <div class="leftC fl">
+          <div class="leftT">
+            <span class="denmark_tour"><p>丹麦5晚6日童话之旅</p></span
+            ><span class="vietnam_tour">
+              <div class="cover_shadow fl">
+                <p>越南12晚3天美妙之旅</p>
+                <div class="price">
+                  <div class="line fl"></div>
+                  <div class="const fl">￥2300</div>
+                  <div class="line fr"></div>
+                </div>
+              </div>
+            </span>
+          </div>
+          <div class="leftB">
+            <span class="thailand_tour"><p>泰国曼谷5晚6日游</p></span
+            ><span class="malaysia_tour"><p>马来西亚4晚6日经典游</p></span>
+          </div>
+        </div>
+        <div class="rightC fr">
+          <div class="japan_tour"><p>日本5晚6日全景游</p></div>
+          <div class="india_tour"><p>印度4晚6日经典游</p></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="more bgc">More></div>
+      <!--旅游资讯标题-->
+      <div class="title">
+        <div class="line fl"></div>
+        <h4 class="fl">旅游资讯</h4>
+        <div class="line fr"></div>
+        <p>各种奇妙有趣的新闻等你发现哦</p>
+      </div>
+      <!--资讯列表-->
+      <div class="news_m w">
+        <div class="bigpic">
+          <img src="./css/maya.png" alt="" />
+        </div>
+        <div class="ruleF fl">
+          <div class="line fr"></div>
+          <p>
+            墨西哥关于<br />
+            外国公民入境的有关规定
+          </p>
+        </div>
+        <div class="articleF fr">
+          <p>
+            墨西哥对外国公民入境有严格的规定。为便于中国公民准备入境材料，驻墨西哥使馆将墨移民局提供的部分规定摘译整理如下，供来墨人员参考（以下规定最终解释权属墨方有关部门）：
+            　　
+          </p>
+          <p>
+            一、墨西哥《移民法》规定，外国公民入境墨西哥应满足如下要求： 　　
+          </p>
+          <p>1、向墨西哥移民官员出示如下证件： 　　</p>
+          <p>（1）护照或现行国际法认可有效的身份和旅行证件； 　　</p>
+          <p>（2）合法有效签证（如需）......</p>
+          <div class="total">完整文章</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="news_n w">
+        <div class="pic1">
+          <img src="./css/pic2.png" alt="" />
+        </div>
+        <div class="ruleF fl">
+          <div class="line fr"></div>
+          <p>
+            新西兰<br />
+            明年准备征游客税
+          </p>
+        </div>
+        <div class="articleF fr">
+          <p>
+            据消息称，新西兰旅游部长表示，新西兰明年(2018年)将会引进游客税。　　
+          </p>
+          <p class="noindent">
+            相关部门不希望新西兰旅游胜地的美誉受到影响，需要采取措施来帮助本地议会来应对越来越多的游客。
+          </p>
+          <p class="noindent">
+            Destination
+            Queenstown表示，若是当地部门不采取措施来应对巨大的游客数量，皇后镇可能会像威尼斯和巴塞罗那一样，造成旅游业过度开发。
+            　　
+          </p>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="more">More></div>
+      <!--游记分享标题-->
+      <div class="title">
+        <div class="line fl"></div>
+        <h4 class="fl">游记分享</h4>
+        <div class="line fr"></div>
+        <p>在这里可以找到最好的旅游攻略</p>
+      </div>
+      <div class="article w">
+        <div class="article_l fl bs">
+          <div class="bgshadow">
+            <h3>精选文章</h3>
+            <p class="dali_til">大理，与阳光约会</p>
+            <p class="location">
+              云南&nbsp;&nbsp;<small>|</small>&nbsp;&nbsp;大理&nbsp;&nbsp;<small>|</small>&nbsp;&nbsp;洱海
+            </p>
+            <p class="time">2017年1月13日</p>
+            <p class="content">
+              寒假开始，我便踏上了开往云南的列车。武汉的冬天基本上是阴暗湿冷的，我多想赶快到达云南，拥抱温暖的阳光。
+            </p>
+            <p class="content">
+              十几天里，我在海埂长堤上喂过海鸥，在洱海沿线画了一个圈，在双廊享受面朝大海春暖花开的惬意，在丽江的阿安酸奶和前台的山东老乡晒太阳聊天，在虎跳峡和棒子们你追我赶。曾经嫌弃过大理的冷清，也曾经抱怨过丽江的物质。但是，当真正要离开的时候，满满的都是不舍...
+            </p>
+            <div class="bgtotal">完整文章</div>
+          </div>
+        </div>
+        <div class="article_r fr">
+          <div class="art bs">
+            <div>
+              <div class="inner fl">泰国</div>
+              <div class="inner fl">黄昏</div>
+            </div>
+            <p>2017.01.03</p>
+            <p>泰国—活着的冲动，浮生一场春梦</p>
+            <p>
+              上世纪80年代，我的父母青春年少之时，生于小城镇的他们还穿着母亲亲手裁制的衣裤，过着粮票兑粮，精打细算的生活
+              当时的崔健还未成名，收音机里放的还是邓丽君、山口百惠....
+              而此时的大...
+            </p>
+            <span class="fl">完整文章>></span>
+          </div>
+          <div class="art behind bs">
+            <div>
+              <div class="inner fl">卡瓦博格</div>
+              <div class="inner fl">黄昏</div>
+            </div>
+            <p>2017.04.15</p>
+            <p>初见卡瓦博格</p>
+            <p>
+              飞来寺，斗转星移间，我们守望6740的日照金山。当一缕缕金色的光线，洒满卡瓦格博的峰尖，就在那一瞬间，我挣脱了重重桎梏，舍却了依依旧念，只为那游荡不安的心魂，从此越发疯癫...
+            </p>
+            <span class="fl">完整文章>></span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="selectpic w bs">
+        <h6>精选照片</h6>
+        <div class="pics">
+          <img class="picben" src="./css/picben.png" />
+          <span>2017.03.06</span><span>By Ben</span>
+          <p>深入贺兰山</p>
+        </div>
+        <div class="pics">
+          <img class="picben" src="./css/picever.png" />
+          <span>2017.07.04</span><span>By Ever</span>
+          <p>雪融山</p>
+        </div>
+        <div class="pics">
+          <img class="picben" src="./css/picwendy.png" />
+          <span>2017.07.04</span><span>By Wendy</span>
+          <p>金色的雪山</p>
+        </div>
+        <div class="pics">
+          <img class="picben" src="./css/picjay.png" />
+          <span>2017.10.11</span><span>By Jay</span>
+          <p>黄昏与海</p>
+        </div>
+        <div class="change fl">
+          <div class="fl"><div class="turns turnleft"></div></div>
+          <div class="fr"><div class="turns"></div></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="more">More></div>
+      <!--底部-->
+      <div class="footer">
+        <p class="footright">
+          © 2017 Leyouyou.cn 粤ICP备12345678号 粤公网安备123456789012号
+          粤ICP证123456号<br />
+          营业执照 新出网证(粤)字123号 全国统一客服电话：0000-123-456
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

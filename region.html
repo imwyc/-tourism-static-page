@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>region</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #f3f3f3;
+      }
+      .w {
+        width: 1200px;
+        margin: auto;
+      }
+      li {
+        list-style: none;
+      }
+      .clear {
+        clear: both;
+      }
+      .fl {
+        float: left;
+      }
+      .fr {
+        float: right;
+      }
+      .bs {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+      .nav {
+        font-size: 18px;
+        color: #3c3d46;
+        line-height: 72px;
+      }
+      .logo img {
+        vertical-align: middle;
+      }
+      .list {
+        margin-left: 150px;
+      }
+      .list > li {
+        float: left;
+        width: 80px;
+        height: 72px;
+        text-align: center;
+        margin-right: 24px;
+      }
+      .active {
+        color: #fefeff !important;
+        background-color: #5696ff;
+      }
+      .list li:hover {
+        color: #fefeff !important;
+        background-color: #5696ff;
+      }
+      .login_register .line {
+        margin: 0 10px;
+        color: #999;
+      }
+      .bgc {
+        width: 1920px;
+        height: 66px;
+        margin: auto;
+        background-color: #666;
+      }
+      .seabtns {
+        margin-top: -66px;
+        width: 1200px;
+      }
+      .seabtns div :nth-child(-n + 4) {
+        height: 22px;
+        border-right: #fefefe 1px solid;
+        border-left: #fefefe 1px solid;
+        text-align: center;
+        margin: 20px 0;
+        padding: 0 39px;
+      }
+      .write,
+      .history {
+        margin-right: -1px;
+      }
+      .region {
+        margin: 55px auto;
+      }
+      .banner {
+        width: 970px;
+        height: 560px;
+        background: url(./css/banner.png);
+      }
+      .turn {
+        margin: 520px 0 0 850px;
+      }
+      .circle {
+        width: 16px;
+        height: 16px;
+        background-color: none;
+        border: #fcfcfd 2px solid;
+        border-radius: 50%;
+        box-sizing: border-box;
+        margin-left: 14px;
+      }
+      .current {
+        background-color: #fcfcfd;
+      }
+      .region_nav {
+        font-size: 24px;
+        line-height: 65px;
+        color: #fff;
+        background-color: #666;
+        text-align: center;
+        padding: 18px 43px;
+      }
+      .region_nav > div:nth-child(-n + 7) {
+        border-bottom: 1px solid #fefefe;
+      }
+      .hot > h3 {
+        font-size: 24px;
+        color: #333;
+        font-weight: normal;
+      }
+      .hot > div {
+        margin-top: 28px;
+        background-color: #fff;
+        border: solid 1px #dcdcdc;
+        padding: 0 11px;
+      }
+      .read {
+        float: left;
+        margin: 45px 17px 48px;
+      }
+      .picture {
+        width: 184px;
+        height: 258px;
+        border: solid 8px #fff;
+        color: #fefefe;
+        font-size: 18px;
+        line-height: 30px;
+      }
+      .japan {
+        background: url(./css/picjapan.png);
+      }
+      .germany {
+        background: url(./css/picde.png);
+      }
+      .russia {
+        background: url(./css/picru.png);
+      }
+      .newzea {
+        background: url(./css/picnew.png);
+      }
+      .melb {
+        background: url(./css/picmer.png);
+      }
+      .picture > p {
+        padding: 30px 0 0 10px;
+      }
+      .read > p {
+        padding: 5px 0 10px;
+        font-size: 20px;
+        line-height: 35px;
+        color: #5696ff;
+      }
+      .download {
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #5696ff;
+      }
+      .guide {
+        margin-top: 52px;
+      }
+      .downguide {
+        width: 350px;
+      }
+      .downguide h2 {
+        margin-bottom: 15px;
+        color: #333;
+        font-size: 20px;
+        line-height: 35px;
+        font-weight: normal;
+      }
+      .downguide img {
+        vertical-align: middle;
+        margin: 5px 5px 5px 0;
+      }
+      .spans {
+        color: #5696ff;
+      }
+      .collect {
+        width: 350px;
+        height: 200px;
+        background: url(./css/collect.png);
+        font-size: 28px;
+        color: #fff;
+        text-align: center;
+        margin-top: 20px;
+        padding: 35px 0 0 20px;
+        box-sizing: border-box;
+      }
+      .allguide {
+        width: 812px;
+      }
+      .allguide > h1 {
+        font-size: 28px;
+        font-weight: normal;
+        color: #333;
+        margin-bottom: 16px;
+      }
+      .order span {
+        margin-left: 5px;
+      }
+      .order .line {
+        color: #999;
+        font-size: 14px;
+      }
+      .currented {
+        color: #5696ff;
+      }
+      .destination {
+        width: 166px;
+        height: 230px;
+        border: solid 6px #fff;
+        color: #fefefe;
+        font-size: 16px;
+        line-height: 26px;
+      }
+      .sydney {
+        background: url(./css/sy.png);
+      }
+      .destination > p {
+        padding: 20px 0 0 8px;
+      }
+      .guides :nth-child(2) {
+        color: #5696ff;
+        font-size: 18px;
+        margin-top: 10px;
+      }
+      .guides :nth-child(3) {
+        color: #666;
+        font-size: 16px;
+        line-height: 30px;
+      }
+      .allgu {
+        margin-top: 23px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .page {
+        margin: 80px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .page span {
+        display: inline-block;
+        width: 50px;
+        text-align: center;
+        line-height: 60px;
+      }
+      .page .currented {
+        color: #5696ff;
+      }
+      .page span:first-child,
+      .page span:last-child {
+        width: 200px;
+        height: 60px;
+        border: 1px solid #999;
+      }
+      .footer {
+        width: 1920px;
+        margin: auto;
+        background-color: #5696ff;
+        color: #fafafc;
+        font-size: 16px;
+        line-height: 35px;
+      }
+      .footright {
+        width: 660px;
+        margin: auto;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!--头部导航条-->
+      <div class="nav w">
+        <div class="logo fl">
+          <img src="./css/logo.png" alt="" />
+          <img src="./css/brand.png" alt="" />
+        </div>
+        <ul class="list fl">
+          <li>首页</li>
+          <li class="active">地区</li>
+          <li>特惠</li>
+          <li>咨询</li>
+          <li>游记</li>
+          <div class="clear"></div>
+        </ul>
+        <div class="login_register fr">
+          <span>登录</span><span class="line">|</span><span>注册</span>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--搜索部分-->
+      <div class="bgc"></div>
+      <div class="seabtns w">
+        <div class="fl">
+          <img src="./css/searchicon.png" alt="" />
+        </div>
+        <div class="fr"><img src="./css/user.png" alt="" /></div>
+        <div class="write fr"><img src="./css/write.png" alt="" /></div>
+        <div class="history fr">
+          <img src="./css/history.png" alt="" />
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--banner-->
+      <div class="region w">
+        <div class="banner fl">
+          <div class="turn">
+            <div class="circle fl"></div>
+            <div class="circle current fl"></div>
+            <div class="circle fl"></div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="region_nav fr">
+          <div>亚洲</div>
+          <div>欧洲</div>
+          <div>北美洲</div>
+          <div>南洋州</div>
+          <div>大洋洲</div>
+          <div>非洲</div>
+          <div>南极洲</div>
+          <div>中国</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--热门推荐-->
+      <div class="hot w">
+        <h3>热门推荐</h3>
+        <div>
+          <div class="read">
+            <div class="picture japan bs">
+              <p>
+                JAPANESE<br />
+                CHERRY<br />
+                日本樱花
+              </p>
+            </div>
+            <p>日本樱花</p>
+            <div class="download">下载阅读</div>
+          </div>
+          <div class="read">
+            <div class="picture germany bs">
+              <p>
+                Neuschwanstein<br />
+                Germany<br />
+                德国新天鹅堡
+              </p>
+            </div>
+            <p>德国新天鹅堡</p>
+            <div class="download">下载阅读</div>
+          </div>
+          <div class="read">
+            <div class="picture russia bs">
+              <p>
+                LAKE BAIKAL<br />
+                RUSSIA<br />
+                贝加尔湖
+              </p>
+            </div>
+            <p>贝加尔湖</p>
+            <div class="download">下载阅读</div>
+          </div>
+          <div class="read">
+            <div class="picture newzea bs">
+              <p>
+                TE ANAU<br />
+                NEW ZWALAND<br />
+                新西兰蒂阿瑙
+              </p>
+            </div>
+            <p>新西兰蒂阿瑙</p>
+            <div class="download">下载阅读</div>
+          </div>
+          <div class="read">
+            <div class="picture melb bs">
+              <p>
+                FITZROY GARDENS<br />
+                MELBOOREN<br />
+                墨尔本菲兹罗花园
+              </p>
+            </div>
+            <p>墨尔本菲兹罗花园</p>
+            <div class="download">下载阅读</div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <!--指南-->
+      <div class="guide w">
+        <div class="downguide fl">
+          <h2>他们刚刚下载了地区指南</h2>
+          <div>
+            <img src="./css/userpic.png" alt="" />
+            <span>刚刚下载了<span class="spans">日本东北</span>地区指南</span>
+          </div>
+          <div>
+            <img src="./css/userpic.png" alt="" />
+            <span>刚刚下载了<span class="spans">日本东北</span>地区指南</span>
+          </div>
+          <div>
+            <img src="./css/userpic.png" alt="" />
+            <span>刚刚下载了<span class="spans">日本东北</span>地区指南</span>
+          </div>
+          <div>
+            <img src="./css/userpic.png" alt="" />
+            <span>刚刚下载了<span class="spans">日本东北</span>地区指南</span>
+          </div>
+          <div class="collect">地区旅游指南作者征集</div>
+        </div>
+        <div class="allguide fr">
+          <h1>全部地区指南</h1>
+          <div class="order">
+            <span>按更新时间</span>
+            <span class="line">|</span>
+            <span class="currented">按下载量</span>
+          </div>
+          <div class="allgu">
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+            <div class="guides">
+              <div class="destination sydney bs">
+                <p>
+                  OPERA HOUSE<br />
+                  SYDNEY<br />
+                  悉尼歌剧院
+                </p>
+              </div>
+              <p>悉尼歌剧院</p>
+              <p>2018-02-01更新</p>
+            </div>
+          </div>
+          <div class="page">
+            <span><上一页</span><span>1</span><span class="currented">2</span
+            ><span>3</span><span>4</span><span>5</span><span>6</span
+            ><span>...</span><span>17</span><span>下一页></span>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <!--底部-->
+      <div class="footer">
+        <p class="footright">
+          © 2017 Leyouyou.cn 粤ICP备12345678号 粤公网安备123456789012号
+          粤ICP证123456号<br />
+          营业执照 新出网证(粤)字123号 全国统一客服电话：0000-123-456
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
